@@ -83,9 +83,23 @@ cache headers automatically (the cache rules are also in `_headers` / `vercel.js
 - Organization and WebSite structured data (JSON-LD).
 - `noindex` on the 404 page.
 
+## Live site check — https://betaaiapps.com (13 October 2026)
+
+| Check | Result |
+|---|---|
+| DNS: 4 GitHub A records on `@`, `www` CNAME to mdgoaltech-web.github.io (checked via 1.1.1.1, 8.8.8.8 and local resolver) | Pass |
+| Email DNS untouched: MX mx1/mx2.hostinger.com and SPF record still present | Pass |
+| HTTPS certificate: Let's Encrypt, covers betaaiapps.com and www.betaaiapps.com, valid to 11 Jan 2027 | Pass |
+| Enforce HTTPS on; `http://`, `http://www.` and `https://www.` all 301-redirect to `https://betaaiapps.com/` (paths kept) | Pass |
+| All pages and assets return 200 with correct types; unknown URLs return the custom 404 page; responses gzip-compressed | Pass |
+| Live Lighthouse, mobile and desktop | 100 · 100 · 100 · 100 (LCP 1.2 s mobile / 0.3 s desktop, CLS 0) |
+| No console errors or security-policy blocks; Manrope font loads; no horizontal overflow at 1440 px or 375 px | Pass |
+| All 19 in-page links have targets; privacy link 200; email links and form use afex@betaaiapps.com | Pass |
+| Mobile menu opens, locks the page behind it, link closes it and lands on the section below the header | Pass |
+| Form: empty-submit errors, mailto fallback message, simulated backend success | Pass |
+
 ## Not tested here (needs the live domain or real devices)
 
-- HTTPS certificate, `www` → apex redirect and response headers on the real host (verify after DNS is set).
 - Real email delivery through Formspree (needs your endpoint and inbox).
 - Physical iPhone/Android devices and Safari/Firefox. Checks used Chromium's device emulation; the CSS uses
   well-supported features, with fallbacks where needed (`overflow: clip` → `hidden`, `100dvh` → `100vh`).
