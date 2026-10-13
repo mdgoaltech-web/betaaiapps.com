@@ -22,9 +22,8 @@ assets/img/           Logo (logo.svg), favicon.svg, app icons, social share imag
 
 ## Before going live — what you need to do
 
-1. **Email address.** The site uses `afex@betaaiapps.com` everywhere. If you want a different address,
-   the address is `afex@betaaiapps.com`; to change it, search-and-replace it in `index.html`, `privacy.html` and `404.html` (it also appears in the `data-email`
-   attribute on the form). Make sure the mailbox exists.
+1. **Email address.** The site uses `afex@betaaiapps.com` everywhere. To change it, search-and-replace it in
+   `index.html`, `privacy.html` and `404.html` (it is also the `data-email` attribute on the form).
 
 2. **Contact form delivery (5 minutes, free).** The form already works without this: it validates the
    message and then opens the visitor's email app with everything filled in. For messages to arrive
